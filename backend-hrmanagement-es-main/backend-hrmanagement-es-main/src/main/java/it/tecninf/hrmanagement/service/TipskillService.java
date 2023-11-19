@@ -50,7 +50,6 @@ public class TipskillService {
 	{	
 		//Nota: a dipendente fissato devo far variare le righe di competenze in base ai curriculum e alle skill del dipendente
 		Dipendente dipendente=dipRepository.findById(id_dipendente).get();
-	    (dipendente.getSkills()).addAll(skills);//Set e HashSet sono collections che non contengono duplicati
 	    Set<Curriculum> curriculums=dipendente.getCurriculum();
 
 		for(Curriculum curriculum: curriculums)
@@ -66,6 +65,7 @@ public class TipskillService {
 	                competenzeRepository.save(comodo);	        		
 	        	}
 	        }
-	    }	    
+	    }	
+		(dipendente.getSkills()).addAll(skills);//Set e HashSet sono collections che non contengono duplicati
 	} 
 }
